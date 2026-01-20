@@ -1,0 +1,15 @@
+# Build folders
+bin/
+obj/
+
+# User-specific Visual Studio files
+*.user
+*.suo
+.vs/
+
+# Database files
+*.db3
+
+# Other temporary files
+*.log
+*.tmp

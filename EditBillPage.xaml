@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinanceTracker.EditBillPage"
+             BackgroundColor="Ivory"
+             Title="EditBillPage">
+    <VerticalStackLayout>
+        <Label 
+            Text=""
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Grid ColumnDefinitions="170,*" ColumnSpacing="12">
+            <Label Text="Bill Name:" Padding="20,0,20,0" VerticalOptions="Center"></Label>
+            <Entry x:Name="NameEntry" Margin="0,0,20,0"  Grid.Column="1"></Entry>
+        </Grid>
+        <Grid ColumnDefinitions="170,*" ColumnSpacing="12">
+            <Label Text="Balance:" Padding="20,0,20,0" VerticalOptions="Center"></Label>
+            <Entry x:Name="BalanceEntry" Keyboard="Numeric" Margin="0,0,20,0" Grid.Column="1"></Entry>
+        </Grid>
+        <Grid ColumnDefinitions="170,*" ColumnSpacing="12">
+            <Label Text="Minimum Payment:" Padding="20,0,20,0" VerticalOptions="Center"></Label>
+            <Entry x:Name="MinimumPaymentEntry" Keyboard="Numeric" Margin="0,0,20,0" Grid.Column="1"></Entry>
+        </Grid>
+        <Grid ColumnDefinitions="170,*" ColumnSpacing="12">
+            <Label Text="Due Date:" Padding="20,0,20,0" VerticalOptions="Center"></Label>
+            <DatePicker x:Name="DueDatePicker" Margin="0,0,20,0" Grid.Column="1"></DatePicker>
+        </Grid>
+        <Grid ColumnDefinitions="170,*" ColumnSpacing="12">
+            <Label Text="Recurring?" FontSize="15" Padding="20,0,20,0" VerticalOptions="Center"></Label>
+            <Switch x:Name="RecurringSwitch" VerticalOptions="Center" Grid.Column="1"></Switch>
+        </Grid>
+        <!--<Grid ColumnDefinitions="170,*" ColumnSpacing="12">
+            <Label Text="Already paid?" FontSize="15" Padding="20,0,20,0" VerticalOptions="Center"></Label>
+            <Switch x:Name="PaidSwitch" VerticalOptions="Center" Grid.Column="1"></Switch>
+        </Grid>-->
+        
+        <!--<ScrollView>-->
+            <!--<VerticalStackLayout Padding="30,20,20,30">
+                <Label Text="Edit Bill" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+                <HorizontalStackLayout VerticalOptions="Center">
+                    <Label Text="Bill Name:" Padding="0,0,20,0" VerticalOptions="Center"></Label>
+                    <Entry x:Name="NameEntry"></Entry>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout VerticalOptions="Center">
+                    <Label Text="Balance:" Padding="0,0,20,0" VerticalOptions="Center"></Label>
+                    <Entry x:Name="BalanceEntry" Keyboard="Numeric"></Entry>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout>
+                    <Label Text="Minimum Payment:" Padding="0,0,20,0" VerticalOptions="Center"></Label>
+                    <Entry x:Name="MinimumPaymentEntry" Keyboard="Numeric"></Entry>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout>
+                    <Label Text="Due Date:" Padding="0,0,20,0" VerticalOptions="Center"></Label>
+                    <DatePicker x:Name="DueDatePicker"></DatePicker>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Padding="5,10,20,10">
+                    <Label Text="Recurring?" FontSize="15" Padding="0,0,20,0" VerticalOptions="Center"></Label>
+                    <Switch x:Name="RecurringSwitch" VerticalOptions="Center"></Switch>
+                </HorizontalStackLayout>
+                
+                <HorizontalStackLayout Padding="5,10,20,10">
+                    <Label Text="Already paid?" FontSize="15" Padding="0,0,20,0" VerticalOptions="Center"></Label>
+                    <Switch x:Name="PaidSwitch" VerticalOptions="Center"></Switch>
+                </HorizontalStackLayout>-->
+                
+                <Editor x:Name="NotesEditor" Placeholder="Notes" HeightRequest="150" PlaceholderColor="DarkGray" Margin="20,0,20,0"></Editor>
+
+                <Grid ColumnDefinitions="*,Auto" Margin="0,0,0,20">
+                    <!--<Button Text="Cancel" FontSize="15" BackgroundColor="SteelBlue" TextColor="Black" BorderColor="Black"
+                            BorderWidth="2" HorizontalOptions="Start" Margin="15" Clicked="OnCancelClicked">
+                        <Button.Shadow>
+                            <Shadow Brush="Gray" Opacity="0.8" Radius="10" Offset="5,5"></Shadow>
+                        </Button.Shadow>
+                    </Button>-->
+
+                <HorizontalStackLayout Grid.Column="1" HorizontalOptions="End" Spacing="10"><!--Margin="0,0,0,20"-->
+                    <Button Text="Save" FontSize="18" FontAttributes="Bold" BackgroundColor="LightGreen" TextColor="Black" BorderColor="Black" 
+                            BorderWidth="2" Margin="15" WidthRequest="85" Clicked="OnSaveChangesClicked">
+                        <Button.Shadow>
+                            <Shadow Brush="Gray" Opacity="0.8" Radius="10" Offset="5,5"></Shadow>
+                        </Button.Shadow>
+                    </Button>
+
+                    <Button Text="Delete" FontSize="15" BackgroundColor="LightCoral" TextColor="Black" BorderColor="Black" 
+                            BorderWidth="2" HorizontalOptions="End" Margin="15" Clicked="OnDeleteClicked">
+                        <Button.Shadow>
+                            <Shadow Brush="Gray" Opacity="0.8" Radius="10" Offset="5,5"></Shadow>
+                        </Button.Shadow>
+                    </Button>
+
+                    <Button Text="Cancel" FontSize="15" BackgroundColor="SteelBlue" TextColor="Black" BorderColor="Black"
+                            BorderWidth="2" HorizontalOptions="Start" Margin="15" Clicked="OnCancelClicked">
+                        <Button.Shadow>
+                            <Shadow Brush="Gray" Opacity="0.8" Radius="10" Offset="5,5"></Shadow>
+                        </Button.Shadow>
+                    </Button>
+            </HorizontalStackLayout>
+                </Grid>
+
+        <!--</VerticalStackLayout>-->
+        <!--</ScrollView>-->
+    </VerticalStackLayout>
+</ContentPage>

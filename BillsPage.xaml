@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinanceTracker.BillsPage"
+             BackgroundColor="Ivory"
+             Title="Bills">
+
+    <Grid RowDefinitions="Auto,Auto,Auto,*" Padding="10">
+        <Label 
+            Text="Finance Tracker"
+            FontSize="32"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            Grid.Row="0"/>
+
+        <!-- Totals Row -->
+        <VerticalStackLayout  Grid.Row="1" Padding="5">
+            <!--<Label Grid.Column="0"/>-->
+            <Label x:Name="TotalDebtLabel" Text="Total Debt: $0.00" FontSize="18" FontAttributes="Bold" HorizontalOptions="End"/>
+            <Label x:Name="MonthlyTotalLabel" Text="Monthly Total: $0.00" FontSize="18" FontAttributes="Bold" HorizontalOptions="End" Margin="10,0,0,0"/>
+        </VerticalStackLayout>
+
+        <Grid ColumnDefinitions="2*,*,*,*,*,*,*,2*, Auto" Padding="5" Grid.Row="2">
+        <Button Text="Add Bill" FontSize="18" WidthRequest="100" BackgroundColor="SteelBlue" TextColor="Black" BorderColor="Black"
+                BorderWidth="2" HorizontalOptions="End" Margin="20" Clicked="OnAddBillClicked" Grid.Row="2" Grid.Column="7">
+            <Button.Shadow>
+                <Shadow Brush="Gray" Opacity="0.8" Radius="10" Offset="5,5"></Shadow>
+            </Button.Shadow>
+        </Button>
+        
+        <!--<Grid ColumnDefinitions="2*,*,*,*,*,*,*,2*, Auto" Padding="5" Grid.Row="2">-->
+            <Label Text="Bill Name" FontSize="18" FontAttributes="Bold" Grid.Column="0" VerticalOptions="Center"></Label>
+            <Label Text="Balance" FontSize="18" FontAttributes="Bold" Grid.Column="1" VerticalOptions="Center"></Label>
+            <Label Text="Minimum Due" FontSize="18" FontAttributes="Bold" Grid.Column="2" VerticalOptions="Center"></Label>
+            <Label Text="Due Date" FontSize="18" FontAttributes="Bold" Grid.Column="3" VerticalOptions="Center"></Label>
+            <Label Text="Recurring" FontSize="18" FontAttributes="Bold" Grid.Column="4" VerticalOptions="Center"></Label>
+            <Label Text="Paid" FontSize="18" FontAttributes="Bold" Grid.Column="5" VerticalOptions="Center"></Label>
+            <Label Text="Notes" FontSize="18" FontAttributes="Bold" Grid.Column="6" VerticalOptions="Center"></Label>
+        </Grid>
+        
+        <CollectionView x:Name="BillsCollection" ItemsSource="{Binding Bills}" Grid.Row="3">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BorderColor="Black" CornerRadius="5" Padding="5" Margin="2" BackgroundColor="{Binding RowColor}">
+                        <Grid ColumnDefinitions="2*,*,*,*,*,*,*,2*" Padding="5" BackgroundColor="{Binding RowColor}">
+                            <Label Text="{Binding Name}" FontSize="16" Padding="5" Grid.Column="0"></Label>
+                            <Label Text="{Binding Balance, StringFormat='{}{0:C}'}" FontSize="16" Padding="5" Grid.Column="1"></Label>
+                            <Label Text="{Binding MinimumPayment, StringFormat='{}{0:C}'}" FontSize="16" Padding="5" Grid.Column="2"></Label>
+                            <Label Text="{Binding DueDate, StringFormat='{}{0:MM/dd/yyyy}'}" FontSize="16" Padding="5" Grid.Column="3"></Label>
+                            <Label Text="{Binding IsRecurring}" FontSize="16" Padding="5" Grid.Column="4"></Label>
+                            <Label Text="{Binding IsPaid}" FontSize="16" Padding="5" Grid.Column="5"></Label>
+                            <Label Text="{Binding Notes}" FontSize="16" Padding="5" Grid.Column="6"></Label>
+
+                            <!--Edit Button -->
+                            <Button Text="Add Payment" BackgroundColor="SteelBlue" TextColor="Black" BorderColor="Black"
+                                    BorderWidth="2" Grid.Column="7" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,15,0" Clicked="OnAddPaymentClicked">
+                                <Button.Shadow>
+                                    <Shadow Brush="Gray" Opacity="0.8" Radius="10" Offset="5,5"></Shadow>
+                                </Button.Shadow>
+                            </Button>
+                            <Button Text="Edit Bill" BackgroundColor="SteelBlue" TextColor="Black" BorderColor="Black"
+                                    BorderWidth="2" HorizontalOptions="End" VerticalOptions="Center" Margin="5,0,0,0" Grid.Column="8" Clicked="OnEditButtonClicked">
+                                <Button.Shadow>
+                                    <Shadow Brush="Gray" Opacity="0.8" Radius="10" Offset="5,5"></Shadow>
+                                </Button.Shadow>
+                            </Button>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+    
+    
+    
+    
+</ContentPage>

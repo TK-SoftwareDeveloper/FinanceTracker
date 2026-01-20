@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinanceTracker.AddBillPage"
+             BackgroundColor="Ivory"
+             Title="Add Bill">
+    <VerticalStackLayout>
+        <Label 
+            Text=""
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <ScrollView>
+            <VerticalStackLayout Padding="30,20,20,30">
+                <Label Text="Add a New Bill" FontSize="18" HorizontalOptions="Center"></Label>
+                <Entry x:Name="NameEntry" Placeholder="Enter Bill Name" PlaceholderColor="DarkGrey"></Entry>
+                <Entry x:Name="BalanceEntry" Placeholder="Enter Bill Balance" PlaceholderColor="DarkGrey"></Entry>
+                <Entry x:Name="MinimumPaymentEntry" Placeholder="Enter Monthly Minimum Payment" PlaceholderColor="DarkGrey"></Entry>
+                <DatePicker x:Name="DueDatePicker"></DatePicker>
+                    <HorizontalStackLayout Padding="5,10,20,10">
+                    <Label Text="Recurring?" FontSize="15" Padding="0,0,20,0" VerticalOptions="Center"></Label>
+                    <Switch x:Name="RecurringSwitch" VerticalOptions="Center"></Switch>
+                </HorizontalStackLayout>
+                <!--<HorizontalStackLayout Padding="5,10,20,10">
+                    <Label Text="Already paid?" FontSize="15" Padding="0,0,20,0" VerticalOptions="Center"></Label>
+                    <Switch x:Name="PaidSwitch" VerticalOptions="Center"></Switch>
+                    </HorizontalStackLayout>-->
+                    <Editor x:Name="NotesEditor" Placeholder="Notes" HeightRequest="150" PlaceholderColor="DarkGray"></Editor>
+                <Grid ColumnDefinitions="*,Auto" Margin="0,0,0,20">
+                    <!--<Button Text="Cancel" FontSize="15" BackgroundColor="SteelBlue" TextColor="Black" BorderColor="Black"
+                            BorderWidth="2" HorizontalOptions="Start" Margin="15" Clicked="OnCancelClicked">
+                        <Button.Shadow>
+                            <Shadow Brush="Gray" Opacity="0.8" Radius="10" Offset="5,5"></Shadow>
+                        </Button.Shadow>
+                    </Button>-->
+                <HorizontalStackLayout Grid.Column="1" HorizontalOptions="End" Spacing="10">
+                    <Button Text="Save" FontSize="15" FontAttributes="Bold" BackgroundColor="LightGreen" TextColor="Black" BorderColor="Black" 
+                            BorderWidth="2" HorizontalOptions="Center" Margin="15" WidthRequest="85" Clicked="OnSaveBillClicked">
+                        <Button.Shadow>
+                            <Shadow Brush="Gray" Opacity="0.8" Radius="10" Offset="5,5"></Shadow>
+                        </Button.Shadow>
+                    </Button>
+                    <Button Text="Cancel" FontSize="15" BackgroundColor="SteelBlue" TextColor="Black" BorderColor="Black"
+                            BorderWidth="2" HorizontalOptions="Center" Margin="15" Clicked="OnCancelClicked">
+                        <Button.Shadow>
+                            <Shadow Brush="Gray" Opacity="0.8" Radius="10" Offset="5,5"></Shadow>
+                        </Button.Shadow>
+                    </Button>
+                </HorizontalStackLayout>
+                </Grid>
+
+            </VerticalStackLayout>
+        </ScrollView>
+        
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinanceTracker.EditPaymentPage"
+             BackgroundColor="Ivory"
+             Title="Edit Payment">
+
+    <VerticalStackLayout Padding="20" Spacing="20">
+
+        <!-- Payment Amount -->
+        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+            <Label Text="Payment Amount:" FontSize="18" VerticalOptions="Center"/>
+            <Entry x:Name="PaymentAmountEntry" Keyboard="Numeric" Grid.Column="1"/>
+        </Grid>
+
+        <!-- Payment Date -->
+        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+            <Label Text="Payment Date:" FontSize="18" VerticalOptions="Center"/>
+            <DatePicker x:Name="PaymentDatePicker" Grid.Column="1"/>
+        </Grid>
+
+        <!-- Save and Cancel Buttons -->
+        <HorizontalStackLayout HorizontalOptions="End" Spacing="10">
+            <Button Text="Save" FontSize="15" FontAttributes="Bold" BackgroundColor="LightGreen" TextColor="Black" BorderColor="Black" BorderWidth="2" WidthRequest="100" Clicked="OnSaveClicked">
+                <Button.Shadow>
+                    <Shadow Brush="Gray" Opacity="0.8" Radius="10" Offset="5,5"/>
+                </Button.Shadow>
+            </Button>
+            <Button Text="Cancel" FontSize="15" BackgroundColor="SteelBlue" TextColor="Black" BorderColor="Black" BorderWidth="2" WidthRequest="100" Clicked="OnCancelClicked">
+                <Button.Shadow>
+                    <Shadow Brush="Gray" Opacity="0.8" Radius="10" Offset="5,5"/>
+                </Button.Shadow>
+            </Button>
+        </HorizontalStackLayout>
+
+    </VerticalStackLayout>
+
+</ContentPage>
