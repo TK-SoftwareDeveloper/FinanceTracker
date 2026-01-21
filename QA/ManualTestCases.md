@@ -2,9 +2,10 @@
 
 ## Test Report Summary
 - Total Test Cases: 12
-- Passed: 12
-- Failed: 0
-- Notes: App behaves as expected. All functional and UI requirements are met.
+- Passed: 11
+- Failed: 1
+- Notes: App behaves as expected for all tested scenarios except one known issue (TC003 – recurring payments update balance but remain marked unpaid). Screenshots and test evidence included.
+
 
 ---
 
@@ -13,7 +14,7 @@
 | ID    | Feature / Scenario | Steps | Expected Result | Actual Result / Pass-Fail |
 |-------|------------------|-------|----------------|---------------------------|
 | TC001 | Add a new bill | Click "Add Bill", enter info, Save | Bill appears in list | Matches expected → Pass |
-| TC003 | Edit a bill | Select "Edit Bill" → Edit → Save | Bill updates correctly | Matches expected → Pass |
+| TC004 | Edit a bill | Select "Edit Bill" → Edit → Save | Bill updates correctly | Matches expected → Pass |
 | TC006 | Delete a bill | Select "Edit Bill" on chosen bill → click "Delete" | Bill removed from list; totals updated | Matches expected → Pass |
 
 ---
@@ -23,7 +24,7 @@
 | ID    | Feature / Scenario | Steps | Expected Result | Actual Result / Pass-Fail |
 |-------|------------------|-------|----------------|---------------------------|
 | TC002 | Add a new payment (non-recurring bill) | Click "Add Payment" on chosen non-recurring bill, enter payment amount and date, click "Save" | Payment is recorded and bill is marked as paid | Payment is recorded; Bill marked as paid | Matches expected → Pass |
-| TC004 | Add a new payment (recurring bill) | Click "Add Payment" on chosen recurring bill, enter payment amount and date, click "Save" | Payment recorded; totals updated | Payment is recorded and the balance updates, but the bill remains marked as unpaid in the bills list | Fail |
+| TC003 | Add a new payment (recurring bill) | Click "Add Payment" on chosen recurring bill, enter payment amount and date, click "Save" | Payment recorded; totals updated | Payment is recorded and the balance updates, but the bill remains marked as unpaid in the bills list | Fail |
 | TC005 | Edit a payment | Select "Add Payment" on chosen bill → Edit → click "Save" | Payment updates correctly | Matches expected → Pass |
 
 ---
